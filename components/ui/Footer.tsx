@@ -27,8 +27,8 @@ export default function Footer() {
         </Row>
         <Row className="mt-3">
           <Col>
-            <Link href='' className="me-3">Cookie notice</Link>
-            <Link href=''>Disclaimer</Link>
+            <Link href='/cookie' className="me-3">Cookie notice</Link>
+            <Link href='/disclaimer'>Disclaimer</Link>
           </Col>
         </Row>
         <Row className="mt-3">

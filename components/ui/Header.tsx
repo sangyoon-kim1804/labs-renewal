@@ -15,10 +15,18 @@ export default function Home() {
       document.body.classList.add('open');      
     }
   }
+  const goHome = () => {
+    router.push('/');
+    if (open) {
+      menuToggle();
+    }    
+  }
   return (
     <>
       <nav className="" style={{ zIndex: "2" }}>
-        <object data="/images/logo-renual.svg" className="logo" style={{ zIndex: "3" }} />
+        <div className='clickable' onClick={()=>goHome()} style={{ zIndex: "3" }}>
+          <object data="/images/logo-renual.svg" className="logo" style={{ cursor: "pointer" }} />
+        </div>
         <ul className={open?"open":""}>
           {header_menus.map((item:any, index:number)=>(
           <li key={index}>
