@@ -61,6 +61,10 @@ body {
   font-family: var(--inter);
 }
 
+body.open {
+  overflow: hidden;
+}
+
 .poppins {
   font-family: var(--poppins);
 }
@@ -153,7 +157,7 @@ nav ul li a.active {
 
 @media (max-width: 991px) {
   nav {
-    padding: 10px;
+    padding: 10px 20px 35px;
   }
   nav ul {
     position: fixed;
@@ -226,7 +230,7 @@ footer .menu {
 */
 .count {
   font-family: var(--avenir);
-  font-size: clamp(48px, 8vw, 60px);
+  font-size: clamp(36px, 8vw, 60px);
   font-weight: 700;
   line-height: 82px;
 }
@@ -258,7 +262,7 @@ a {
   width: 100%;
   max-width: 1024px !important;
   margin: 0 auto;
-  padding: 50px 10px;
+  padding: 50px 20px !important;
 }
 .fd-row {
   flex-direction: row !important;
