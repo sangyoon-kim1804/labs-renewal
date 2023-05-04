@@ -1,5 +1,6 @@
 import { Provider } from "react-redux"
 import { store, persistor } from '#/store/'
+
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 import Header from './Header';
 import Footer from './Footer';

@@ -46,7 +46,7 @@ export default function Home() {
           <object data="/images/logo-renual.svg" className="logo" style={{ cursor: "pointer" }} />
           {/* {'open:' + open.toString()} / {'slide:' + slide.toString()} */}
         </div>
-        <ul className={slide?"open":""}>
+        <ul style={{ zIndex: '2' }} className={slide?"open":""}>
           {header_menus.map((item:any, index:number)=>(
           <li key={index}>
             <Link className={item.path==router.pathname?'active':''} target={item.target} href={item.path} onClick={menuToggle}>
