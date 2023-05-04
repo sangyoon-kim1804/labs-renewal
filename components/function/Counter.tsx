@@ -10,7 +10,7 @@ export const Counter = ({ ...props }: any) => {
     <Col lg={props.size} key={index} className="mb-5 d-flex align-items-center fd-col">
       <span className="count w-100 d-flex align-items-center justify-content-lg-start jusfify-content-md-center">
         <Icon iconName={item.icon} className="me-3" size="20" /> 
-        {/* <CountUp end={item.amount} /> */}
+        <CountUp end={item.amount} />
       </span>
       <small className="w-100 d-flex justify-content-lg-start jusfify-content-md-center"><b>{item.caption}</b></small>
     </Col>
