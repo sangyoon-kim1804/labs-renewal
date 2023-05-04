@@ -2,11 +2,14 @@
   "name": "labs-renual",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://sangyoon-kim1804.github.io/labs-renewal",
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "npm run build",
+    "deploy": "touch out/.nojekyll && gh-pages -d out --dotfiles"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
@@ -16,6 +19,7 @@
     "bootstrap": "^5.2.3",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.4",
+    "gh-pages": "^5.0.0",
     "next": "13.3.4",
     "react": "18.2.0",
     "react-bootstrap": "^2.7.4",
