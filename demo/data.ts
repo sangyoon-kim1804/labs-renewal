@@ -20,23 +20,23 @@ export const footer_menus: { title: string, tree: any }[] = [
     title: 'developers',
     tree: [
       { title: 'Developer portal', path: '/develope', target: '_self', },
-      { title: 'GitHub', path: 'https://github.com/', target: '_blank', },
-      { title: 'BRS whitepaper', path: '/', target: '_blank', },
+      { title: 'GitHub', path: 'https://github.com/barunsonlabs?tab=repositories', target: '_blank', },
+      { title: 'BRS whitepaper', path: '/download/BRS-ecosystem-whitepaper-v.0.9.2.pdf', target: '_blank', },
     ]
   },
   {
     title: 'communities',
     tree: [
-      { title: 'Telegram announcement', path: 'https://telegram.com/', target: '_blank', },
-      { title: 'Telegram community', path: 'https://telegram.com/', target: '_blank', },
-      { title: 'Twitter', path: 'https://twitter.com/', target: '_blank', },
-      { title: 'Medium', path: 'https://medium.com/', target: '_blank', },
+      { title: 'Telegram announcement', path: 'https://t.me/brsofficial', target: '_blank', },
+      { title: 'Telegram community', path: 'https://t.me/brsofficialcommunity', target: '_blank', },
+      { title: 'Twitter', path: 'https://twitter.com/brsEcoOfficial', target: '_blank', },
+      { title: 'Medium', path: 'https://medium.com/@brsOfficial', target: '_blank', },
     ]
   },
   {
     title: 'general',
     tree: [
-      { title: 'Media Kit', path: '/', target: '_blank', },
+      { title: 'Media Kit', path: 'https://github.com/barunsonlabs/media-kit', target: '_blank', },
       { title: 'Transparency', path: 'https://brs.tools', target: '_blank', },
     ]
   },  

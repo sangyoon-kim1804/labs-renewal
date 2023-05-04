@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { footer_menus } from '#/demo/data';
+import { Icon } from '#/components/function/Icon';
 
 export default function Footer() {
   return (
@@ -17,7 +18,7 @@ export default function Footer() {
               {item.tree.map((tree:any, i:number) => (
               <li key={i}>
                 <Link target={tree.target=='_blank'?'_blank':'_self'} href={tree.path}>
-                  {tree.title}
+                  {tree.title} {tree.target=='_blank'?<Icon iconName={"ArrowUpRight"} className="ms-1 position-relative" size="14" style={{ top: "-1px" }} />:null}
                 </Link>
               </li>
               ))}
