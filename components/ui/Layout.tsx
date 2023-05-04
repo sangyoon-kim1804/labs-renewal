@@ -1,6 +1,10 @@
+import { Provider } from "react-redux"
+import { store, persistor } from '#/store/'
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 import Header from './Header';
 import Footer from './Footer';
+import Cookie from './Cookie';
+
 export default function Layout({ children }:any) {
   const secBody = useRef<any>();
   const secFooter = useRef<any>();
@@ -14,14 +18,15 @@ export default function Layout({ children }:any) {
     }       
   },[]);
   return (
-    <>
+    <Provider store={store}>
       <Header />
       <main ref={secBody}>
         {React.cloneElement(children)}
       </main>
-      <div ref={secFooter} >
-      <Footer />
+      <div ref={secFooter} className="position-relative bg-black" >
+        <Footer />
+        <Cookie />        
       </div>
-    </>
+    </Provider>
   )
 }
