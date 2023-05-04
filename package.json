@@ -2,19 +2,16 @@
   "name": "labs-renual",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://cracklover1804.github.io/labs-renewal",
   "scripts": {
     "dev": "next dev",
+    "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "build": "next build && next export",
-    "deploy": "next build && next export && touch out/.nojekyll && git add -f out/ && git commit -m 'deploy to gh-pages' && git subtree push --prefix out origin gh-pages"
+    "lint": "next lint"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "@types/node": "18.16.3",
     "@types/react": "18.2.0",
-    "@types/react-countup": "^4.3.1",
     "@types/react-dom": "18.2.1",
     "bootstrap": "^5.2.3",
     "eslint": "8.39.0",
