@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const debug = process.env.NODE_ENV !== "production";
-const repository = "http://cracklover1804.github.io/labs-renewal";
+const repository = "/";
 
 const nextConfig = {
   reactStrictMode: true,
