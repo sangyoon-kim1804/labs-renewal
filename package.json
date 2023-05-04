@@ -23,7 +23,6 @@
     "react": "18.2.0",
     "react-bootstrap": "^2.7.4",
     "react-bootstrap-icons": "^1.10.3",
-    "react-countup": "^6.4.2",
     "react-dom": "18.2.0",
     "react-redux": "^8.0.5",
     "react-slick": "^0.29.0",
@@ -31,7 +30,8 @@
     "redux-persist": "^6.0.0",
     "slick-carousel": "^1.8.1",
     "typescript": "5.0.4",
-    "universal-cookie": "^4.0.4"
+    "universal-cookie": "^4.0.4",
+    "use-count-up": "^3.0.1"
   },
   "devDependencies": {
     "@types/react-slick": "^0.23.10"

@@ -1853,7 +1853,7 @@
     "uncontrollable" "^7.2.1"
     "warning" "^4.0.3"
 
-"react-countup@*", "react-countup@^6.4.2":
+"react-countup@*":
   "integrity" "sha512-wdDrNb2lPFGbLb+i0FTgswPbWziubS6KZRII8NRpXmUCoZsi15PFbIHgBz60Dyxd4KPuRvwsK5aawIU4OPP3jA=="
   "resolved" "https://registry.npmjs.org/react-countup/-/react-countup-6.4.2.tgz"
   "version" "6.4.2"
@@ -2295,6 +2295,18 @@
   "version" "4.4.1"
   dependencies:
     "punycode" "^2.1.0"
+
+"use-count-up@^3.0.1":
+  "integrity" "sha512-jlVsXJYje6jh+xwQaCEYrwHoB+nRyillNEmr21bhe9kw7tpRzyrSq9jQs9UOlo+8hCFkuOmjUihL3IjEK/piVg=="
+  "resolved" "https://registry.npmjs.org/use-count-up/-/use-count-up-3.0.1.tgz"
+  "version" "3.0.1"
+  dependencies:
+    "use-elapsed-time" "3.0.2"
+
+"use-elapsed-time@3.0.2":
+  "integrity" "sha512-2EY9lJ5DWbAvT8wWiEp6Ztnl46DjXz2j78uhWbXaz/bg3OfpbgVucCAlcN8Bih6hTJfFTdVYX9L6ySMn5py/wQ=="
+  "resolved" "https://registry.npmjs.org/use-elapsed-time/-/use-elapsed-time-3.0.2.tgz"
+  "version" "3.0.2"
 
 "use-sync-external-store@^1.0.0":
   "integrity" "sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA=="
