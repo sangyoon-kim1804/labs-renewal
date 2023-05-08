@@ -10,9 +10,9 @@ export default function Footer() {
   return (
     <>
       <footer>
-        <Row>
+        <Row className="justify-content-between">
           {footer_menus.map((item:any, index:number)=>(
-          <Col className="mb-4 mb-xl-0 " lg={3} sm={6} key={index} style={{ color: "var(--g04)", textTransform: "uppercase" }}>
+          <Col className="mb-4 mb-xl-0 " lg={'auto'} sm={'6'} key={index} style={{ color: "var(--g04)", textTransform: "uppercase" }}>
             {item.title}
             <ul>
               {item.tree.map((tree:any, i:number) => (

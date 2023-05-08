@@ -44,7 +44,6 @@ export default function Home() {
       <nav className="" style={{ zIndex: "2" }}>
         <div className='clickable' onClick={()=>goHome()} style={{ zIndex: "3" }}>
           <object data="/images/logo-renual.svg" className="logo" style={{ cursor: "pointer" }} />
-          {/* {'open:' + open.toString()} / {'slide:' + slide.toString()} */}
         </div>
         <ul style={{ zIndex: '2' }} className={slide?"open":""}>
           {header_menus.map((item:any, index:number)=>(

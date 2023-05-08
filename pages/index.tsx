@@ -14,8 +14,9 @@ export default function Home() {
         <h3 className="text-second">New method of participation in the transparent content economy</h3>        
         <h1 className="text-first mt-2">CONTENT X FINANCE</h1>          
         <div className="position-relative mb-5">
-          <img className="w-100 d-block m-auto" style={{ maxWidth: "450px" }} src={`/images/keyvisual12.png`} alt="keyvisual1" />
+          <img className="w-100 d-block m-auto" style={{ maxWidth: "450px" }} src={`${process.env.NODE_ENV === "development" ? "": "https://sangyoon-kim1804.github.io/labs-renewal"}/images/keyvisual12.png`} alt="keyvisual1" />
           <h3 className="position-absolute text-second" style={{ right: "0px", bottom: "30%" }}>SEE WHAT WE MAKE</h3>
+          {/* {process.env.NODE_ENV} */}
         </div>
       </div>
       <div className="header_stats mt-5 pt-5 ">
