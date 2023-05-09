@@ -37,7 +37,7 @@ export const Slide = ({ ...props }: any) => {
     <Slider {...SliderSetting} className="mb-5">
     {props.data.map((item:any, index:number)=>(
       <div key={index} className="px-2 mb-3 pb-2">
-        <Image src={`/images/${item.image}`} className="w-100" width={0} height={0} alt="slide" layout="responsive" quality={100}/>
+        <Image src={`/labs-renewal/images/${item.image}`} className="w-100" width={0} height={0} alt="slide" layout="responsive" quality={100}/>
         <h3 className="text-g09 pt-3">{item.title}</h3>
         <h3 className="text-g06 pt-2">{item.desc}</h3>
       </div>

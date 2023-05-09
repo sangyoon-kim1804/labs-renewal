@@ -19,7 +19,7 @@ export default function Develope(props:any) {
   const { recordMap } = props;
   return (
     <Container>
-      <div className="mt-5 pt-5">
+      <div className="mt-2 mt-lg-5 pt-5">
         <NotionPage recordMap={recordMap} rootPageId='' />
       </div>
     </Container>

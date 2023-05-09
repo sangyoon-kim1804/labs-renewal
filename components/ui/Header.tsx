@@ -2,6 +2,7 @@ import Link from 'next/link';
 import React, { useRef, useState, useEffect } from 'react';
 import { Icon } from '#/components/function/Icon';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Image from 'next/image';
 import { header_menus } from '#/demo/data';
 import {useRouter} from 'next/router';
 import { slideStatus, selectSlide } from '#/store/slices/counterSlice';
@@ -43,9 +44,9 @@ export default function Home() {
     <>
       <nav className="" style={{ zIndex: "2" }}>
         <div className='clickable' onClick={()=>goHome()} style={{ zIndex: "3" }}>
-          <object data="/images/logo-renual.svg" className="logo" style={{ cursor: "pointer" }} />
+          <Image src={`/labs-renewal/images/logo-renual.svg`} className="logo" style={{ cursor: "pointer" }} layout="responsive" alt='logo' width={0} height={0} />
         </div>
-        <ul style={{ zIndex: '2' }} className={slide?"open":""}>
+        <ul style={{ zIndex: '2' }} className={"p-0 " + (slide?"open":"")}>
           {header_menus.map((item:any, index:number)=>(
           <li key={index}>
             <Link className={item.path==router.pathname?'active':''} target={item.target} href={item.path} onClick={menuToggle}>
