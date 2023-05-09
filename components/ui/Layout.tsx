@@ -8,17 +8,20 @@ import Footer from './Footer';
 export default function Layout({ children }:any) {
   const secBody = useRef<any>();
   const secFooter = useRef<any>();
-  const [margin, setMargin] = useState(0);
-  const [minHeight, setMinHeight] = useState(0);
-  const handleResize = () => {    
-    if (window.innerWidth < 991) {
-      setMargin(3);
-    } else if (window.innerWidth > 990 && window.innerWidth < 1024) {
-      setMargin(1);
-    } else {
-      setMargin(5);
+  const handleResize = () => {
+    let calc_margin:any = 0;
+    let win_width:any = window.innerWidth;
+    switch (win_width) {
+      case window.innerWidth < 991:
+        calc_margin = 20;
+        break;      
+      case win_width < 1024 :
+        calc_margin = 50;
+        break;
+      default:
+        calc_margin = 1;
     }
-    setMinHeight(window.innerHeight-secFooter.current.clientHeight-margin);
+    secBody.current.style.minHeight = window.innerHeight-secFooter.current.clientHeight-calc_margin+'px';
   }  
   useEffect(()=>{
     handleResize();
@@ -29,7 +32,7 @@ export default function Layout({ children }:any) {
   return (
     <Provider store={store}>
       <Header />
-      <main style={{ minHeight: minHeight }}>        
+      <main ref={secBody}>
         {React.cloneElement(children)}
       </main>
       <div ref={secFooter} className="position-relative bg-black" >
