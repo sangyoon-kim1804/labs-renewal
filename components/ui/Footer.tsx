@@ -5,6 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { footer_menus } from '#/demo/data';
 import { Icon } from '#/components/function/Icon';
+import Cookie from './Cookie';
 
 export default function Footer() {
   return (
@@ -37,6 +38,8 @@ export default function Footer() {
             <span className="text-tertiary">© 2023 BARUNSONLABS GLOBAL PTE. LTD.</span>
           </Col>
         </Row>
+
+        <Cookie />        
       </footer>
     </>
   )
