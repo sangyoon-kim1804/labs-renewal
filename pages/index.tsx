@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Slide } from '#/components/function/Slider';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -14,7 +15,16 @@ export default function Home() {
         <h3 className="text-second">New method of participation in the transparent content economy</h3>        
         <h1 className="text-first mt-2">CONTENT X FINANCE</h1>          
         <div className="position-relative mb-5">
-          <img className="w-100 d-block m-auto" style={{ maxWidth: "450px" }} src={`${process.env.NODE_ENV === "development" ? "": "https://sangyoon-kim1804.github.io/labs-renewal"}/images/keyvisual12.png`} alt="keyvisual1" />
+          <Image 
+          src="/images/keyvisual12.png"
+          className="d-block m-auto"
+          width={0} height={0}
+          style={{ maxWidth: "600px" }}
+          layout="responsive"
+          alt="keyvisual"
+          quality="100"
+          priority
+          />
           <h3 className="position-absolute text-second" style={{ right: "0px", bottom: "30%" }}>SEE WHAT WE MAKE</h3>
           {/* {process.env.NODE_ENV} */}
         </div>
@@ -51,7 +61,7 @@ export default function Home() {
         </Row>
       </div>
       <div className="rofler">
-        <img src={`/images/keyvisual22.png`} className="w-75 m-auto d-block my-5 pt-5" alt="keyvisual2" style={{ maxWidth: "425px" }} />
+        <Image src={`/images/keyvisual22.png`} className="w-75 m-auto d-block my-5 pt-5" style={{ maxWidth: "425px" }} layout="responsive" alt='keyvisual2' width={0} height={0} />
         <h2 className="text-center text-first">
           Even now, cultural content is <span className="text-second">expanding</span> with your pariticipation.
         </h2>
@@ -62,8 +72,7 @@ export default function Home() {
           {partners.map((item:any, index:number)=>(
             <Col sm={4} xs={6} className={"px-0 py-4 py-sm-4 py-md-5 px-sm-4 py-lg-5 px-lg-5 " + (index==8?'offset-3 offset-sm-0':'')} key={index}>
               <Link href={item.path} target="_blank">
-                <img src={`/images/${item.image}`} alt={item.title} className="w-100" />
-                {/* <Image src={`/images/${item.image}`} className="w-100" alt={item.title} width={100} height={100} /> */}
+                <Image src={`/images/${item.image}`} className="w-100" layout="responsive" alt={item.title} width={0} height={0} />
               </Link>
             </Col>
           ))}

@@ -14,8 +14,9 @@ const nextConfig = {
       : "",  */
   images: {
     loader: 'imgix',
+    unoptimized : true,
     path: 'https://sangyoon-kim1804.github.io/labs-renewal',
-  },      
+  },
 }
 
 module.exports = nextConfig
