@@ -134,7 +134,7 @@ nav {
   padding: 20px 30px 40px;
   position: fixed;
   width: 100vw;
-  background: rgba(255, 255, 255, .8);
+  background: rgba(255, 255, 255, .85);
   backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(7px);
 }
@@ -195,7 +195,7 @@ nav ul li a.active {
   } 
   nav ul li {
     display: block;
-    margin-bottom: 3em;
+    margin-bottom: 2.5em;
   }
   nav > ul > li:last-child {
     margin-bottom: 0;
@@ -406,4 +406,23 @@ tr.notion-simple-table-row td {
 }
 footer ul > li > a.active {
   color: var(--secondary) !important;
+}
+
+.p_contents.false {
+  overflow: hidden;
+  flex: 1 1 0%;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -Webkit-line-clamp: 2;
+  -Webkit-box-orient: vertical;
+  min-height: 48px;
+}
+.p_contents.true {
+  display: block;
+}
+@media (min-width: 992px){
+  .col-lg-6 {
+    width: 50% !important;
+  }
 }

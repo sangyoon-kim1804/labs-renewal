@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Slide } from '#/components/function/Slider';
@@ -6,12 +6,59 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Balls from '#/components/function/Balls';
-import { header_stats, center_stats, brew, partners } from '#/demo/data';
+import { brew, partners } from '#/demo/data';
 import { Counter } from '#/components/function/Counter';
 import { NextSeo } from 'next-seo';
+import axios from 'axios';
 
 export default function Home() {
   const [ballCount, setBallCount] = useState(100);
+  const data:any = [];
+  /*const header_status:any = [];
+  const center_status:any = [];*/
+  const [header, setHeader] = useState([]);
+  const [center, setCenter] = useState([]);
+  const header_status:any = [];
+  const center_status:any = [];
+  const getKeyValue = (elements:any, key:any) => {
+    var status  = elements.find( (x:any) => x.key === key)['key'];
+    var icon    = elements.find( (x:any) => x.key === key)['icon'];
+    var amount  = parseInt(elements.find( (x:any) => x.key === key)['value']);
+    var caption = elements.find( (x:any) => x.key === key)['caption'];
+    return { status, icon, amount, caption };
+  }
+  const fetchAsset = async () => {
+    const result = await axios(`https://api.barunsonlabs.io/v1/brs/asset`);
+    const response = result.data.data;    
+    response.map((item:any) => {      
+      var caption = '';
+      var icon = '';
+      switch (item.status) {
+        case "assets": icon="Lightbulb"; caption = "Content issued and growing through the BRS ecosystem"; break;
+        case "amount": icon="CurrencyDollar"; caption = "Total digital assets in the BRS ecosystem"; break;
+        case "users": icon="EmojiLaughing"; caption = "Worldwide BRS ecosystem users"; break;        
+        case "app": icon="Display"; caption = "Applications in BRS network"; break;
+        case "trade_price": icon="CurrencyDollar"; caption = "Value exchanged through BRS"; break;
+        default: icon=""; caption = "";
+      }
+      data.push({
+        "key" : item.status,
+        "icon" : icon,
+        "caption" : caption,
+        "value" : parseInt(item.count_value) + parseInt(item.correction)
+      });
+    });
+    header_status.push(getKeyValue(data,'assets'));
+    header_status.push(getKeyValue(data,'amount'));
+    setHeader(header_status);
+    center_status.push(getKeyValue(data,'users'));
+    center_status.push(getKeyValue(data,'app'));
+    center_status.push(getKeyValue(data,'trade_price'));
+    setCenter(center_status);
+  };
+  useEffect(()=>{
+    fetchAsset();
+  },[])
   return (
     <>
       <NextSeo
@@ -40,10 +87,10 @@ export default function Home() {
         <div className="header_stats mt-5 pt-5 ">
           <Row>
             {
-              header_stats.map((item:any, index:number)=>(
-                <Counter amount={item.amount} key={index} icon={item.icon} caption={item.caption} size={6} />
+              header.map((item:any, index:number)=>(
+                <Counter amount={item.amount} status={item.status} key={index} icon={item.icon} caption={item.caption} size={6} />
               ))
-            }
+            } 
           </Row>
         </div>
         <div className="caption mt-5 pt-5">
@@ -70,8 +117,8 @@ export default function Home() {
         <div className="center_stats mt-5 pt-5">
           <Row>
             {
-              center_stats.map((item:any, index:number)=>(
-                <Counter amount={item.amount} key={index} icon={item.icon} caption={item.caption} size={4} />
+              center.map((item:any, index:number)=>(
+                <Counter amount={item.amount} status={item.status} key={index} icon={item.icon} caption={item.caption} size={4} />
               ))
             }            
           </Row>

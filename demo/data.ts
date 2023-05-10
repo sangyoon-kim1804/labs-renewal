@@ -107,34 +107,3 @@ export const partners: {image: string, title: string, path: string}[] = [
     path: 'http://www.barunson.co.kr/',
   },
 ];
-
-export const header_stats: {icon: string, amount: number, caption: string}[] = [
-  {
-    icon: 'Lightbulb',
-    amount: 48131,
-    caption: 'Content issued and growing through the BRS ecosystem'
-  },
-  {
-    icon: 'CurrencyDollar',
-    amount: 10324456,
-    caption: 'Total digital assets in the BRS ecosystem'
-  },
-];
-
-export const center_stats: {icon: string, amount: number, caption: string}[] = [
-  {
-    icon: 'EmojiLaughing',
-    amount: 3233,
-    caption: 'Worldwide BRS ecosystem users'
-  },
-  {
-    icon: 'Display',
-    amount: 37,
-    caption: 'Applications in BRS network'
-  },  
-  {
-    icon: 'CurrencyDollar',
-    amount: 121234,
-    caption: 'Value exchanged through BRS'
-  },
-];

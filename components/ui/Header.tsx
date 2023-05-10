@@ -13,6 +13,7 @@ export default function Home() {
   const dispatch = useDispatch();
   const slide = useSelector(selectSlide);
   const [open, setOpen] = useState(false);
+  const [navbar, setNavbar] = useState('');
   const menuToggle = () => {
     dispatch(slideStatus(!slide));
     setOpen(!open);
@@ -34,15 +35,27 @@ export default function Home() {
     router.push('/');
     slide?menuToggle():null;
   }
+  const handleScroll = () => {
+    let wy = window.pageYOffset;
+    setNavbar("");
+    if (wy > 100){
+      setNavbar("shadow-sm");
+    }
+  }     
   useEffect(()=>{
     handleResize();
+    window.addEventListener('scroll', handleScroll);
+    setTimeout(function(){
+      handleScroll();
+    },100);    
     return () => {
       window.addEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleScroll);
     }
   },[]);  
   return (
     <>
-      <nav className="" style={{ zIndex: "2" }}>
+      <nav className={navbar} style={{ zIndex: "2" }}>
         <div className='clickable' onClick={()=>goHome()} style={{ zIndex: "3" }}>
           <Image src={`/labs-renewal/images/logo-renual.svg`} className="logo" style={{ cursor: "pointer" }} layout="responsive" alt='logo' width={0} height={0} />
         </div>
