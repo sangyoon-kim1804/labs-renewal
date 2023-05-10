@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React, { useRef, useState, useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import {useRouter} from 'next/router';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { footer_menus } from '#/demo/data';
@@ -8,6 +8,7 @@ import { Icon } from '#/components/function/Icon';
 import Cookie from './Cookie';
 
 export default function Footer() {
+  const router = useRouter();
   return (
     <>
       <footer>
@@ -18,7 +19,7 @@ export default function Footer() {
             <ul>
               {item.tree.map((tree:any, i:number) => (
               <li key={i}>
-                <Link target={tree.target=='_blank'?'_blank':'_self'} href={tree.path}>
+                <Link className={tree.path.split('/')[1]==router.pathname.split('/')[1] && tree.target=="_self"?'active':''} target={tree.target} href={tree.path}>
                   {tree.title} {tree.target=='_blank'?<Icon iconName={"ArrowUpRight"} className="ms-1 position-relative" size="14" style={{ top: "-1px" }} />:null}
                 </Link>
               </li>
@@ -38,7 +39,6 @@ export default function Footer() {
             <span className="text-tertiary">© 2023 BARUNSONLABS GLOBAL PTE. LTD.</span>
           </Col>
         </Row>
-
         <Cookie />        
       </footer>
     </>

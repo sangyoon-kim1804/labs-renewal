@@ -49,7 +49,7 @@ export default function Home() {
         <ul style={{ zIndex: '2' }} className={"p-0 " + (slide?"open":"")}>
           {header_menus.map((item:any, index:number)=>(
           <li key={index}>
-            <Link className={item.path==router.pathname?'active':''} target={item.target} href={item.path} onClick={menuToggle}>
+            <Link className={item.path.split('/')[1]==router.pathname.split('/')[1] && item.target=="_self"?'active':''} target={item.target} href={item.path} onClick={menuToggle}>
               {item.title}
             </Link>
           </li>

@@ -1,21 +1,24 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Slide } from '#/components/function/Slider';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Balls from '#/components/function/Balls';
 import { header_stats, center_stats, brew, partners } from '#/demo/data';
 import { Counter } from '#/components/function/Counter';
 import { NextSeo } from 'next-seo';
 
 export default function Home() {
+  const [ballCount, setBallCount] = useState(100);
   return (
     <>
       <NextSeo
         title="BARUNSONLABS : Content X Finance"
       />
       <Container>
+        {/* <Balls ballCount={ballCount}/>         */}
         <div className="keyvisual mt-2 mt-lg-5 pt-5">
           <h3 className="text-second">New method of participation in the transparent content economy</h3>        
           <h1 className="text-first mt-2">CONTENT X FINANCE</h1>          
@@ -36,7 +39,11 @@ export default function Home() {
         </div>
         <div className="header_stats mt-5 pt-5 ">
           <Row>
-            <Counter data={header_stats} size={6} />
+            {
+              header_stats.map((item:any, index:number)=>(
+                <Counter amount={item.amount} key={index} icon={item.icon} caption={item.caption} size={6} />
+              ))
+            }
           </Row>
         </div>
         <div className="caption mt-5 pt-5">
@@ -61,8 +68,12 @@ export default function Home() {
           </div>
         </div>
         <div className="center_stats mt-5 pt-5">
-          <Row>                  
-            <Counter data={center_stats} size={4} />
+          <Row>
+            {
+              center_stats.map((item:any, index:number)=>(
+                <Counter amount={item.amount} key={index} icon={item.icon} caption={item.caption} size={4} />
+              ))
+            }            
           </Row>
         </div>
         <div className="rofler">
