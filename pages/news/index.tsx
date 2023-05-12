@@ -12,7 +12,7 @@ import Slider from "react-slick";
 import Masonry from '@mui/lab/Masonry';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
-import GridItem from '#/components/function/Preview';
+import { Preview } from '#/components/function/Preview';
 
 export default function News() {
   const [cardData, setCardData] = useState([]);
@@ -34,13 +34,13 @@ export default function News() {
       }
     ]
   }  
-  const Grid = () => (
+  /*const Grid = () => (
     <>
       {cardData.map((card:any, index) => (
-        <GridItem key={index} {...card} />
+        <Preview key={index} {...card} />
       ))}
     </>
-  )
+  )*/
   useEffect(() => {
     const fetchCard = async () => {
       const result = await axios(`https://api.barunsonlabs.io/v1/news?take=10&page=1`);
@@ -83,7 +83,7 @@ export default function News() {
               </Slider>
             </Row>
             <Masonry columns={1} spacing={0} className="row mt-4" style={{ marginLeft: "-12px", marginRight: "-12px", width: "calc(100% + 24px)" }}>
-              <Grid />
+              <Preview />
             </Masonry>
           </Col>
         </div>

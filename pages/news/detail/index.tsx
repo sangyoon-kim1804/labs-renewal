@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import axios from 'axios';
 import Link from "next/link";
 import { NextSeo } from 'next-seo';
+import { Icon } from '#/components/function/Icon';
 
 export default function Detail() {
   const [newsData, setNewsData] = useState<any>([]);
@@ -29,7 +30,10 @@ export default function Detail() {
       />
       <Container>
         <div className="mt-2 mt-lg-5 pt-5">
-          <Link href="/news">Back to list</Link>
+          <Link href="/news">
+            <Icon iconName="ArrowLeft" className="me-3" size="20" />
+            Back to list
+          </Link>
           <h2 className="barlow fw-600 text-center pt-3 mt-5">
             {newsData.title}
           </h2>

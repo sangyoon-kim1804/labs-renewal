@@ -19,6 +19,6 @@
     },
     "typeRoots": ["./@types", "./node_modules/@types"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/function/scroll.js"],
   "exclude": ["node_modules"]
 }
