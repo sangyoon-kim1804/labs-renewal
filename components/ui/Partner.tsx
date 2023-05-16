@@ -57,7 +57,7 @@ export const Partner = ({ ...props }: any) => {
           <>
             <Col sm={4} xs={6} className={"px-0 py-4 py-sm-4 py-md-5 px-sm-4 py-lg-5 px-lg-5"}>
               <Skeleton variant="rectangular" width="100%">
-                <div style={{ height: "40px" }}></div>
+                <div style={{ height: "36px" }}></div>
               </Skeleton>
             </Col>
           </>
